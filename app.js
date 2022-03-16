@@ -1,7 +1,9 @@
 //import { Twilio } from "twilio";
 
-const accountSid = 'AC838300f7fd36d2aa3d6093259a6b6508'; 
-const authToken = '5b7739bdde71611a7a14cae5a3227e6f'; 
+require('dotenv').config()
+
+const accountSid = process.env.accountSid;
+const authToken = process.env.authToken;
 const client = require('twilio')(accountSid, authToken); 
  
 client.messages 
