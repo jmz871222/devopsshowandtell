@@ -1,16 +1,41 @@
-//import { Twilio } from "twilio";
+const express = require("express");
+const app = express();
+const nodemailer = require("nodemailer");
+let PORT = process.env.PORT || 3000;
 
-require('dotenv').config()
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth:{
+    user: "devopsbatch16jiangmingzhi@gmail.com",
+    pass: "testing123!"
 
-const accountSid = process.env.accountSid;
-const authToken = process.env.authToken;
-const client = require('twilio')(accountSid, authToken); 
- 
-client.messages 
-      .create({ 
-         body: 'Your appointment is coming up on July 21 at 3PM', 
-         from: 'whatsapp:+14155238886',       
-         to: 'whatsapp:+6592287686' 
-       }) 
-      .then(message => console.log(message.sid)) 
-      .done();
+  },
+  tls:{
+    rejectUnauthorized: false,
+  }
+})
+
+let mailOptions = {
+  from: "devopsbatch16jiangmingzhi@gmail.com",
+  to: "jiang.missouri@gmail.com",
+  subject: "testing",
+  text: "hello!!!"
+}
+
+transporter.sendMail(mailOptions, function(err, success){
+  if(err){
+    console.log(err);
+  }
+  else{
+    console.log("email sent");
+  }
+});
+
+app.get("/", (req, res) => {
+  res.send("email service is running!");
+});
+
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
+});
+
