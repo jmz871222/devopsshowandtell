@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const nodemailer = require("nodemailer");
-let PORT = 3000;
+let PORT = 8080;
 
 let transporter = nodemailer.createTransport({
   service: "gmail",
@@ -16,25 +16,51 @@ let transporter = nodemailer.createTransport({
 })
 
 let mailOptions = {
-  from: "devopsbatch16jiangmingzhi@gmail.com",
-  to: "jiang.missouri@gmail.com",
-  subject: "testing",
-  text: "hello!!!"
+  from: "",
+  to: "",
+  subject: "",
+  text: ""
 }
 
-transporter.sendMail(mailOptions, function(err, success){
-  if(err){
-    console.log(err);
+function toSendEmail(t, sub, txt)
+{
+  let mailOptions = 
+  {
+    from: "devopsbatch16jiangmingzhi@gmail.com",
+    to: t,
+    subject: sub,
+    text: txt
   }
-  else{
-    console.log("email sent");
-  }
-});
+
+  transporter.sendMail(mailOptions, 
+    function(err, success)
+    {
+      if(err)
+      {
+        console.log(err);
+      }
+      else
+      {
+        console.log("email sent");
+        
+      }
+    });
+}
 
 app.get("/", (req, res) => {
-  res.send("email service is running!");
-});
+    res.send("email service is running!");
+    
+  });
 
+app.get("/sendemail", (req, res) => {
+    
+    var target_email = req.query.email;
+    var email_subject = req.query.subject;
+    var email_text = req.query.text;
+    toSendEmail(target_email, email_subject, email_text);
+    res.send("email subject "+ email_subject + " with a text of" + email_text + " has been sent to " + target_email);
+  });
+  
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
