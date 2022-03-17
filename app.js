@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const nodemailer = require("nodemailer");
-let PORT = process.env.PORT || 3000;
+let PORT = 3000;
 
 let transporter = nodemailer.createTransport({
   service: "gmail",

@@ -1,4 +1,3 @@
 #!/bin/bash
-
-cd /home/user
+cd /home
 node app.js
