@@ -8,10 +8,11 @@
 (3) You can register a new Gmail for your own. 
 
 **Steps:**
+
 (1) Docker run the sending email API:
 
 docker run -d -p 8080:8080 jmz871222/emailapi:latest
 
-(2) Using url to send email to target email box
+(2) call api by typing params in url to send email to target email box
 
-http://localhost:8080/sendemail?email={email address}&subject={email subject}&text={email text}
+http://localhost:8080/sendemail?email={email_address}&subject={email_subject}&text={email_text}
