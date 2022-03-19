@@ -1,12 +1,14 @@
-# Sending Email API with NodeJS (using Nodemailer)
+# API to Send Email using NodeJS and Nodemailer
 
 **Key Features:**
 
-(1) After deploying the docker container "emailapi", you can call the sending email api to send a email to any email address.
+(1) After deploying the docker, you can call the sending email api to send email to any target address.
 
-(2) Currently, the sender email box is a new Gmail "devopsbatch16jiangmingzhi@gmail.com", which is set up for sending purpose.
+(2) The sender email box is Gmail "devopsbatch16jiangmingzhi@gmail.com", which is newly set up for sending purpose.
 
-(3) You can register a new Gmail for your own. 
+(3) You can register a new Gmail and replace the email address and password in the code for your own. 
+
+(4) If you are using your own Gmail, please switch on "Less Secure Apps" for the Gmail account. You can find more here: https://support.google.com/accounts/answer/6010255
 
 **Steps:**
 
