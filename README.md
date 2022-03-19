@@ -8,7 +8,7 @@
 
 (3) You can register a new Gmail and replace the email address and password in the code for your own. 
 
-(4) If you are using your own Gmail, please switch on "Less Secure Apps" for the Gmail account. You can find more here: https://support.google.com/accounts/answer/6010255
+(4) If you are using your own Gmail, please switch on "Less Secure Apps" for the Gmail account. You can find more information here: https://support.google.com/accounts/answer/6010255
 
 **Steps:**
 
