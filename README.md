@@ -14,8 +14,14 @@
 
 (1) Docker run the sending email API:
 
-**docker run -d -p 8080:8080 jmz871222/emailapi:latest**
+docker run -d -p 8080:8080 jmz871222/emailapi:latest
 
 (2) call api by typing params in url to send email to target email box
 
-**http://localhost:8080/sendemail?email={email_address}&subject={email_subject}&text={email_text}**
+http://localhost:8080/sendemail?email={email_address}&subject={email_subject}&text={email_text}
+
+**Heroku:**
+
+The service (docker build) has also been deployed to heroku at:
+
+https://docker-devops-demo.herokuapp.com/
